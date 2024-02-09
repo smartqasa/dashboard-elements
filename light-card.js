@@ -11,6 +11,7 @@ class SmartQasaLightCard extends LitElement {
   static get styles() {
     return css`
       .card {
+        height: var(--sq-card-height, 100px);
         margin: var(--sq-card-margin, 0);
         padding: var(--sq-card-padding, 16px);
         background-color: var(--sq-card-background-color, white);
@@ -21,6 +22,7 @@ class SmartQasaLightCard extends LitElement {
         grid-column-gap: 10px;
         grid-row-gap: 3px;
         box-shadow: var(--sq-card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.2));
+        cursor: pointer;
       }
       .icon {
         grid-area: i;
@@ -97,7 +99,7 @@ class SmartQasaLightCard extends LitElement {
 
   _toggleEntity(e) {
     e.stopPropagation();
-    this.hass.callService('homeassistant', 'toggle', {
+    this.hass.callService('light', 'toggle', {
       entity_id: this.config.entity,
     });
   }
