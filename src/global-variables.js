@@ -8,4 +8,4 @@ window.smartqasa.deviceType =
     : (window.screen.width < 600 ? 'phone' : 'tablet');
 
 // Reset Home Path
-// window.smartqasa.homePath = 'notSet';
+window.smartqasa.homePath = 'notSet';
