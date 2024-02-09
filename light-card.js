@@ -11,33 +11,33 @@ class SmartQasaLightCard extends LitElement {
   static get styles() {
     return css`
       .card {
-        height: var(--sq-card-height, 100px);
         margin: var(--sq-card-margin, 0);
-        padding: var(--sq-card-padding, 16px);
-        background-color: var(--sq-card-background-color, white);
+        padding: 18px;
+        border: var(--sq-card-border);
         border-radius: var(--sq-card-border-radius, 12px);
+        box-shadow: var(--sq-card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.2));
         display: grid;
         grid-template-areas: "i n" "i s";
         grid-template-columns: auto 1fr;
         grid-column-gap: 10px;
-        grid-row-gap: 3px;
-        box-shadow: var(--sq-card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.2));
+        grid-row-gap: 5px;
+        background-color: var(--sq-card-background-color, white);
         cursor: pointer;
       }
       .icon {
+        height: var(--sq-icon-size);
+        width: var(--sq-icon-size);
         grid-area: i;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-self: center;
         padding: var(--sq-icon-padding);
         border-radius: 50%;
-        height: var(--sq-icon-size);
-        width: var(--sq-icon-size);
         transition: background-color 0.3s ease-out, color 0.3s ease-out;
       }
       .name {
         grid-area: n;
-        align-self: flex-end;
+        align-self: end;
         text-align: left;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -47,7 +47,7 @@ class SmartQasaLightCard extends LitElement {
       }
       .state {
         grid-area: s;
-        align-self: flex-start;
+        align-self: start;
         text-align: left;
         text-overflow: ellipsis;
         overflow: hidden;
